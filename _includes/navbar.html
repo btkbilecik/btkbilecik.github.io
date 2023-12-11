@@ -2,15 +2,14 @@
   <div class="flex-1">
     <a class="btn btn-ghost">
       <img class="h-12" src="/assets/images/logo.svg" alt="BTK" />
-      <h1>Bilgisayar ve Teknoloji Kulübü</h1>
+      <h1 class="hidden flex-none items-center md:block">Bilgisayar ve Teknoloji Kulübü</h1>
     </a>
   </div>
-  <div class="hidden flex-none items-center md:block">
+  <div >
     <ul class="menu menu-horizontal px-1">
       <li>
         <details>
           <summary>Bağlantılar</summary>
-
           <ul class="p-2 bg-base-100 rounded-t-none">
             {% for item in site.data.nav %}
             <li>
