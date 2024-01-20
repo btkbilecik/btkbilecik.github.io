@@ -1,3 +1,18 @@
 url: "https://btkbilecik.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Bilgisayar ve Teknoloji Kulübü" # the name of your site, e.g. ACME Corp.
+
+
+collections:
+  events:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"
+      
+# gelecek tarihli paylaşımları göster
+future: true

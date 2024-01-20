@@ -3,8 +3,29 @@ layout: default
 title: "Etkinlikler"
 ---
 
+
 <div class="flex justify-center items-center">
     <div class="max-w-lg my-16">
-        <h1 class="text-md sm:text-2xl text-text">Şuanda bir etkinlik bulunamamaktadır.</h1>
+        <article class="prose md:prose-lg lg:prose-xl prose-h1:text-text2 prose-li:text-text prose-li:list-disc ">
+            <h1 class="!text-text text-center">{{ page.title }}</h1>
+            {% for event in site.events %}
+            {% if event %}
+            <div class="card bg-base-100 shadow-xl card-compact">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        {{ event.title }}
+                        <div class="badge badge-secondary">{{ event.date | date_to_string }}</div>
+                    </h2>
+                    <p>{{ event.excerpt | markdownify }}</p>
+                    <div class="card-actions justify-end">
+                        <a class="btn bg-text text-white hover:bg-base-200 transition-all duration-200 hover:-translate-y-1" href="{{ event.url }}">Daha fazla detay için</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <!--<h1 class="text-md sm:text-2xl text-text">Şuanda bir etkinlik bulunamamaktadır.</h1>-->
+            
+            {% endfor %}
+        </article>
     </div>
 </div>
