@@ -14,7 +14,21 @@ title: "Etkinlikler"
                 <div class="card-body">
                     <h2 class="card-title">
                         {{ event.title }}
-                        <div class="badge badge-secondary">{{ event.date | date_to_string }}</div>
+                        <div class="text-text2 badge badge-accent badge-outline">
+                            {{ event.date | date_to_string }}
+            
+                            {% assign simdikiTarih = 'now' | date: '%s' %}
+                            {% assign etkinlikTarihi = event.date | date: '%s' %}
+                            {% if simdikiTarih > etkinlikTarihi %}
+                                - <span class="text-red-500">Etkinlik Tarihi Geçmiştir</span>
+                            {% endif %}
+        
+                            {% if event.yer %}
+                                - {{ event.yer }}
+                            {% else %}
+                                - Yer henüz belirlenmedi
+                            {% endif %}
+                        </div>
                     </h2>
                     <p>{{ event.excerpt | markdownify }}</p>
                     <div class="card-actions justify-end">

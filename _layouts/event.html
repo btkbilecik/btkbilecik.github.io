@@ -16,6 +16,10 @@ layout: default
                     {% if simdikiTarih > etkinlikTarihi %}
                         - <span class="text-red-500">Etkinlik Tarihi Geçmiştir</span>
                     {% endif %}
+
+                    {% if page.yer %}
+                        - {{ page.yer }}
+                    {% endif %}
                 </div>
             </h1>
             {{ content }}
