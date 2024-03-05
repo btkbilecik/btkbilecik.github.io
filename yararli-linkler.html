@@ -1,0 +1,55 @@
+---
+layout: default
+title: "Yararlı Linkler"
+---
+
+
+<div class="flex justify-center items-center">
+    <main class="max-w-lg my-16">
+        <article class="prose md:prose-lg lg:prose-xl prose-h1:text-text2 prose-li:text-text prose-li:list-disc ">
+            <div class="prose max-w-4xl flex-grow">
+                <h1 class="!text-text text-center">{{ page.title }}</h1>
+                <p class="text-text2">{{ site.data.bookmark | size }} adet yararlı link</p>
+            </div>
+            <div class="not-prose grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+                {% for item in site.data.bookmark %}
+                <a class="card card-compact bg-base-100 hover:bg-base-200 transition-all duration-200 hover:-translate-y-1"
+                   href="{{item.link}}" target="_blank">
+                    <div class="card-body">
+                        <h2 class="card-title">{{item.name}}</h2>
+                        <p class="text-xs">{{item.description}}</p>
+                        <div>
+                            {% for tag in item.tags %}
+                                <span class="badge badge-outline">{{tag}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </a>
+
+                {% endfor %}
+            </div>
+        </article>
+    </main>
+</div>
+
+<script>
+    document.querySelectorAll('a[data-tag]').forEach(function(tagLink) {
+        tagLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            var selectedTag = this.getAttribute('data-tag');
+            filterPlatforms(selectedTag);
+        });
+    });
+
+    function filterPlatforms(tag) {
+        var platforms = document.querySelectorAll('li[data-tags]');
+        platforms.forEach(function(platform) {
+            var tags = platform.getAttribute('data-tags').split(', ');
+            if (tags.includes(tag)) {
+                platform.style.display = 'block';
+            } else {
+                platform.style.display = 'none';
+            }
+        });
+    }
+</script>

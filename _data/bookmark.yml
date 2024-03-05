@@ -1,0 +1,8 @@
+- name: SQLBolt
+  description: SQLBolt, SQL öğrenmek isteyenler için interaktif bir platformdur.
+  link: https://sqlbolt.com/
+  tags: [SQL, veritabanı, eğitim]
+- name: W3Schools
+  description: W3Schools, web geliştirme konusunda öğrenmek isteyenler için interaktif bir platformdur.
+  link: https://www.w3schools.com/
+  tags: [html, css, web, eğitim]
