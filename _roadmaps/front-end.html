@@ -1,0 +1,29 @@
+---
+layout: roadmap
+title: "Front-End Geliştirme Yol Haritası"
+---
+
+<p>Front-End(Ön Uç) geliştirme, kullanıcıların doğrudan etkileşime girdiği bir web sitesinin görsel ve etkileşimli öğelerinin geliştirilmesidir.
+    HTML, CSS ve JavaScript'in bir kombinasyonudur.
+    HTML yapıyı, CSS stil ve düzeni, JavaScript ise dinamik davranış ve etkileşimi sağlar.</p>
+
+{% for item in site.data.roadmap.frontend %}
+    <h2>{{item.title}}</h2>
+    <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-1"/>
+        <div class="collapse-title text-xl font-medium">
+            {{item.topic}}
+        </div>
+        <div class="collapse-content">
+            <p>{{item.desc}}</p>
+            <ul class="list-none hover:list-disc">
+                {% for url in item.urls %}
+                <li>
+                    <a target="_blank" href="{{url}}">{{url}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endfor %}
+

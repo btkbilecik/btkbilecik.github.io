@@ -1,0 +1,8 @@
+- title: Internet
+  topic: İnternet Nasıl Çalışır?
+  desc: İnternetin nasıl çalıştığını öğrenin.
+  urls: [
+    "https://turk.net/blog/internet-nedir-nasil-calisir/",
+    "https://cs.fyi/guide/how-does-internet-work",
+    "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work"
+  ]

@@ -6,6 +6,8 @@ title: "Bilgisayar ve Teknoloji Kulübü" # the name of your site, e.g. ACME Cor
 collections:
   events:
     output: true
+  roadmaps:
+    output: true
 
 defaults:
   - scope:
@@ -13,6 +15,22 @@ defaults:
       type: "events"
     values:
       layout: "event"
+  - scope:
+      path: ""
+      type: "roadmaps"
+    values:
+      layout: "roadmap"
       
 # gelecek tarihli paylaşımları göster
 future: true
+
+
+plugins:
+  - jekyll-seo-tag
+
+social:
+  name: btkbilecik
+  links:
+    - https://instagram.com/btkbilecik
+    - https://linkedin.com/in/btkbilecik
+    - https://github.com/btkbilecik

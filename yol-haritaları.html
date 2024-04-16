@@ -1,0 +1,28 @@
+---
+layout: default
+title: "Yol Haritaları"
+---
+
+<div class="flex justify-center items-center">
+    <div class="max-w-lg my-16">
+        <article class="prose md:prose-lg lg:prose-xl prose-h1:text-text2 prose-li:text-text prose-li:list-disc ">
+            <h1 class="!text-text text-center">{{ page.title }}</h1>
+            <div class="space-y-4">
+                {% for roadmap in site.roadmaps %}
+                <div class="card bg-base-100 shadow-xl card-compact">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            {{ roadmap.title }}
+                        </h2>
+                        <div class="card-actions justify-end">
+                            <a class="btn bg-text text-white hover:bg-base-200 transition-all duration-200 hover:-translate-y-1" href="{{ roadmap.url }}">Yol Haritası İçin</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </article>
+
+    </div>
+</div>
+
